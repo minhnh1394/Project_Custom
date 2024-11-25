@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.gmetrix.net/browsersms4.0//ProjectInstructions46V2.aspx?tstKey=24904&lng=en-US by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Oct 2018 20:00:56 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>IIG Training</title>
+    <link rel="stylesheet" href="Styles/style.css" />
+    <link rel="stylesheet" href='Styles/ProjectV2.css' />
+
+
+
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+
+</head>
+
+<body>
+    <form method="post"
+        action="http://www.gmetrix.net/browsersms4.0//ProjectInstructions46V2.aspx?tstKey=24904&amp;lng=en-US"
+        id="frmQuestion">
+
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9A7FEFD0" />
+        </div>
+
+        <script type="text/javascript">
+
+
+
+            var currentScrollLocation;
+            function ToggleNavigation(elem, ToShow) {
+                if (ToShow == "divSample" || ToShow == "divVideo") {
+                    currentScrollLocation = $(document).scrollTop();
+                    $(document).scrollTop(0);
+                }
+                $(".NavigationSpan").removeClass("tabselected");
+                $(elem).addClass("tabselected");
+                $(".ContentDiv").hide();
+                $("#" + ToShow).show();
+                if (ToShow == "divInstructions") {
+                    $(document).scrollTop(currentScrollLocation);
+                }
+            }
+            $(document).ready(function () {
+
+
+
+
+                try { // hide all programming words
+
+
+                    $('p').filter(':contains("|EndRedWords|")').hide();
+                    $('[color="#ff0000"]').hide();
+
+
+                    $('font').removeAttr('color');
+
+                    $('strong').removeAttr('style');
+                    $('div[dir="rtl"]').addClass('displayInline');
+
+
+                } catch (e) { }
+                try {
+                    $(".HelpButton").each(function () {
+                        $(this).css("display", "inline"); //Hides lightbulb image if test is in testing mode.
+                        $(this).attr("src", "Images/Tip_02.png");
+                        $(this).attr("width", "16px");
+                        $(this).attr("height", "16px");
+                        $(this).attr("alt", "help");
+                        $(this).attr("title", "Click to toggle help");
+
+                        var currentclick = $(this).attr("onclick");
+                        var newclick = currentclick.replace(")", ", this.parentElement.parentElement)");
+                        $(this).attr("onclick", newclick);
+
+                    });
+                } catch (e) { }
+
+
+
+                GetSavedValues();
+                $.each(CheckedValues, function (index, value) {
+                    $('#' + value).prop('checked', true);
+                    $(".Nav" + value).addClass("navselected");
+
+
+
+                });
+            });
+
+            var CheckedValues = [];
+            function GetSavedValues() {
+                //CheckedValues = ["181464","181480"];
+                try {
+                    //stringy = stringy.replace(/\s/g, '');
+
+                    CheckedValues = projectTestCallbackObject.getSavedValues().replace(/\s/g, '').split(',');
+                } catch (e) { }
+            }
+            function SetSavedValues() {
+                //alert(CheckedValues.join(","));
+                try {
+                    projectTestCallbackObject.setSavedValues(CheckedValues.join(","));
+                } catch (e) { }
+            }
+
+            function handleClick(cb) {
+
+
+                if (cb.checked == true) {
+                    $(".Nav" + cb.id).addClass("navselected");
+                    var i = CheckedValues.indexOf(cb.id);
+                    if (i != -1) {
+                        CheckedValues.splice(i, 1);
+                    } // remove first to handle duplicates
+                    CheckedValues.push(cb.id);
+                }
+                else {
+                    $(".Nav" + cb.id).removeClass("navselected");
+                    var ix = CheckedValues.indexOf(cb.id);
+                    if (ix != -1) {
+                        CheckedValues.splice(ix, 1);
+                    }
+                }
+                SetSavedValues();
+            }
+
+
+            function ToggleElement(id, ParentLocation) {
+                $(ParentLocation).find(".help" + id).toggle();
+            }
+
+
+            function LaunchInWindow(uri) {
+                projectTestCallbackObject.launchInWindow(uri);
+            }
+
+        </script>
+        <div class="NavigationContainer">
+
+
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#01'>
+                    Project1
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task1'>
+                    1.
+                    <span><span>Task 1</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task2'>
+                    2.
+                    <span><span>Task 2</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task3'>
+                    3.
+                    <span><span>Task 3</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task4'>
+                    4.
+                    <span><span>Task4</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task5'>
+                    5.
+                    <span><span>Task5</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task6'>
+                    6.
+                    <span><span>Task6</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task7'>
+                    7.
+                    <span><span>Task7</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task8'>
+                    8.
+                    <span><span>Task8</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#02'>
+                    Project2
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task9'>
+                    9.
+                    <span><span>Task 9</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task10'>
+                    10.
+                    <span><span>Task 10</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task11'>
+                    11.
+                    <span><span>Task 11</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task12'>
+                    12.
+                    <span><span>Task12</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task13'>
+                    13.
+                    <span><span>Task13</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task14'>
+                    14.
+                    <span><span>Task14</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task15'>
+                    15.
+                    <span><span>Task15</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task16'>
+                    16.
+                    <span><span>Task16</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#02'>
+                    Project2
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task17'>
+                    17.
+                    <span><span>Task 17</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task18'>
+                    18.
+                    <span><span>Task 18</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task19'>
+                    19.
+                    <span><span>Task 19</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task20'>
+                    20.
+                    <span><span>Task20</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task21'>
+                    21.
+                    <span><span>Task21</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task22'>
+                    22.
+                    <span><span>Task22</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task23'>
+                    23.
+                    <span><span>Task23</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task24'>
+                    24.
+                    <span><span>Task24</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#04'>
+                    Project4
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task25'>
+                    25.
+                    <span><span>Task 25</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task26'>
+                    26.
+                    <span><span>Task 26</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task27'>
+                    27.
+                    <span><span>Task 27</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task28'>
+                    28.
+                    <span><span>Task28</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task29'>
+                    29.
+                    <span><span>Task29</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task30'>
+                    30.
+                    <span><span>Task30</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task31'>
+                    31.
+                    <span><span>Task31</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task32'>
+                    32.
+                    <span><span>Task32</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#05'>
+                    Project5
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task33'>
+                    33.
+                    <span><span>Task 33</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task34'>
+                    34.
+                    <span><span>Task 34</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task35'>
+                    35.
+                    <span><span>Task 35</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task36'>
+                    36.
+                    <span><span>Task36</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task37'>
+                    37.
+                    <span><span>Task37</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task38'>
+                    38.
+                    <span><span>Task38</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task39'>
+                    39.
+                    <span><span>Task39</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task40'>
+                    40.
+                    <span><span>Task40</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#06'>
+                    Project6
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task41'>
+                    41.
+                    <span><span>Task 41</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task42'>
+                    42.
+                    <span><span>Task 42</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task43'>
+                    43.
+                    <span><span>Task 43</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task44'>
+                    44.
+                    <span><span>Task44</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task45'>
+                    45.
+                    <span><span>Task45</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task46'>
+                    46.
+                    <span><span>Task46</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task47'>
+                    47.
+                    <span><span>Task47</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task48'>
+                    48.
+                    <span><span>Task48</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#07'>
+                    Project7
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task49'>
+                    49.
+                    <span><span>Task 49</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task50'>
+                    50.
+                    <span><span>Task 50</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task51'>
+                    51.
+                    <span><span>Task 51</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task52'>
+                    52.
+                    <span><span>Task52</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task53'>
+                    53.
+                    <span><span>Task53</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task54'>
+                    54.
+                    <span><span>Task54</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task55'>
+                    55.
+                    <span><span>Task55</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task56'>
+                    56.
+                    <span><span>Task56</span></span>
+                </a>
+            </div>
+            <div class='NavigationItem' style="text-align: center; font-weight: bold">
+                <a href='#08'>
+                    Project8
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask1'>
+                <a href='#task57'>
+                    57.
+                    <span><span>Task 57</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask2'>
+                <a href='#task58'>
+                    58.
+                    <span><span>Task 58</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask3'>
+                <a href='#task59'>
+                    59.
+                    <span><span>Task 59</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask4'>
+                <a href='#task60'>
+                    60.
+                    <span><span>Task60</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask5'>
+                <a href='#task61'>
+                    61.
+                    <span><span>Task61</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask6'>
+                <a href='#task62'>
+                    62.
+                    <span><span>Task62</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask7'>
+                <a href='#task63'>
+                    63.
+                    <span><span>Task63</span></span>
+                </a>
+            </div>
+
+            <div class='NavigationItem Navtask8'>
+                <a href='#task64'>
+                    64.
+                    <span><span>Task64</span></span>
+                </a>
+            </div>
+
+
+        </div>
+        <!-- Nội dung-->
+        <div class="instructionContainer">
+
+            <div id="divInstructions" class="ContentDiv">
+                <div id="GmxTable" style="padding-top: 30px;">
+
+
+
+
+                    <br style="clear: both;" />
+
+                    <div class="container">
+                        <a name='01' class="Anchor">&nbsp;</a>
+                        <p class="Question">
+                            <A href="Word - Project 01.docx">Word - Project 1.docx</A>
+                        </p>
+                        <!-- Bắt đầu 1 câu -->
+                        <a name='task1' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181607' onclick='handleClick(this);' />
+                            1. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 1</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Áp dụng bộ kiểu dáng Lines (Stylish) vào tài liệu.</p>
+
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+
+                        <!-- kết thúc 1 câu-->
+                        <a name='task2' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            2. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 2</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần “Rosa”, chuyển đổi 5 đoạn văn bản bắt đầu với “Banksianae” thành
+                                            1 danh sách đánh dấu đầu đoạn. Căn chỉnh các dấu đầu dòng với lề trang bên
+                                            trái. (Không thay đổi khoảng cách thụt lề.”
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task3' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            3. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 3</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần “Contact Us”, chèn chú thích cuối trang vào bên phải của tiêu đề.
+                                            Nhập văn bản vào chú thích cuối trang là “Includes Address”.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task4' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            4. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 4</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Hiển thị tiêu đề đầu trang kiểu Integral trên tất cả các trang của tài liệu,
+                                            ngoại trừ trang 1.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task5' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            5. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 5</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần “About Us”, chèn ký hiệu tia chớp vào phía trước cụm văn bản
+                                            “With the vision of sharing our knowledge…”. Sử dụng phông “Websings và ký
+                                            tự 126 (Ký tự tia chớp).
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task6' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            6. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 6</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần “Rosa”, áp dụng hiệu ứng nghệ thuật kiểu Pensil Sketch vào hình
+                                            ảnh các bông hoa.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task7' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            7. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 7</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Ở phía dưới của trang đầu tiên, gộp các ô trong dòng đầu tiên của bảng.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task8' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            8. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 8</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần “Contact Us”, chuyển đổi chế độ bao quanh văn bản cho hình ảnh
+                                            thành Square.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='02' class="Anchor">&nbsp;</a>
+                        <p class="Question">
+                            <A href="Word - Project 02.docx">Word - Project 2.docx</A>
+                        </p>
+
+
+
+                        <a name='task9' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            9. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 9</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Tìm từ "Automatic" và xóa từ đó trong trong tài liệu.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task10' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            10. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 10</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Sử dụng tính năng của Word để thay thế tất cả trường hợp của "Informatics
+                                            Technology" với "Basic Informatics".
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task11' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            11. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 11</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Lecturers", chuyển đổi văn bản được phân cách bởi tab thành bảng
+                                            có 2 cột. Mặc định AutoFit behavior.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task12' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            12. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 12</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong đoạn văn bản rỗng phía sau tiêu đề của tài liệu, chèn bảng mục lục. Sử
+                                            dụng kiểu Automatic Table 1.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task13' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            13. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 13</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Contact Us", trong hộp văn bản màu xanh đậm (dark blue), chèn
+                                            văn bản "Anytime Account Access".
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task14' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            14. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 14</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Lecturers", xóa chú thích/ghi chú mà được đính vào văn bản.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task15' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            15. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 15</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Overview", thay đổi khoảng cách dòng của 2 đoạn văn bản Excactly
+                                            14pt.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task16' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            16. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 16</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Áp dụng kiểu style là Intense Emphasis cho đoạn văn sau tiêu đề "Lecturers".
+                                        </p>
+                                    </span>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='03' class="Anchor">&nbsp;</a>
+                        <p class="Question">
+                            <A href="Word - Project 03.docx">Word - Project 3.docx</A>
+                        </p>
+
+
+
+                        <a name='task17' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            17. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 17</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Kiểm tra tài liệu để biết các vấn đề về khả năng tiếp cận. Khắc phục các sự
+                                            cố liên quan đến bảng được báo cáo trong kết quả kiểm tra bằng cách sử dụng
+                                            hành động được đề xuất đầu tiên.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task18' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            18. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 18</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Thay đổi hướng của trang 3 thành Landscape
+
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task19' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            19. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 19</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Introduce", thay đổi lại kích thước của bảng để mỗi cột có độ
+                                            rộng là 1.57"
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task20' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            20. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 20</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Introduce", thay đổi lại kích thước của bảng để mỗi cột có độ
+                                            rộng là 1.57"
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task21' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            21. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 21</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Microsoft Office Specialist", chèn một trình giữ chỗ mới với tên
+                                            là MOS tại vị trí cuối đoạn thứ 2 sau tiêu đề.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task22' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            22. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 22</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Thay đổi nội dung hiển thị của đối tượng đồ họa Smart Art để liệt kê các
+                                            phiên bản từ Office 2017 đến Microsoft 365 Apps, từ trái sang phải. Không
+                                            thay đổi thứ tự của các mục trong cửa sổ văn bản.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task23' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            23. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 23</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "MOS Version", gắn các văn bản mô tả thay thế "Process flow" vào
+                                            đồ họa SmartArt". Hãy chắc chắn chọn toàn bộ đồ họa SmartArt."
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task24' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            24. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 24</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong thuộc tính của tập tin, thêm "Skypec" vào danh mục (category).
+                                        </p>
+                                    </span>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='04' class="Anchor">&nbsp;</a>
+                        <p class="Question">
+                            <A href="Word - Project 04.docx">Word - Project 4.docx</A>
+                        </p>
+
+
+
+                        <a name='task25' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            25. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 25</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần MOS 2019, sắp xếp bảng dữ liệu trong cột "Date" (thứ tự tăng lên)
+                                            và cột "Score" (thứ tự tăng lên
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task26' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            26. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 26</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "IC3 Certification", thay đổi cấp độ danh sách cho "Internet
+                                            Computing Core Certification - Global Standard 5" thành Cấp 3.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task27' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            27. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 27</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "IC3 Certification", ở đoạn trống cuối trang, sử dụng tính năng
+                                            3D Models để chèn mô hình <a href="Glasses.obj">Kính</a>. Đặt mô hình ở chế
+                                            độ "In Like with Text".
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task28' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            28. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 28</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "IC3 Certification", áp dụng hiệu ứng nghệ thuật "Pencil Sketch"
+                                            cho hình ảnh chứng chỉ.
+
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task29' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            29. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 29</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Chèn section break continuous ở vị trí đầu tiên của tiêu đề "MOS 2019".
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task30' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            30. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 30</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Cấu hình bảng để dòng tiêu đề đầu tiên tự động lặp lại trong mỗi trang.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task31' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            31. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 31</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "MOS Level", áp dụng hiệu ứng hình dạng "Soft Round Bevel" cho đồ
+                                            họa SmartArt. (Hãy chắc chắn chọn toàn bộ đồ họa SmartArt.)
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task32' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            32. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 32</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "MOS Certification", thay đổi text wrapping cho hình ảnh thành
+                                            kiểu Square (Ascending)
+                                        </p>
+                                    </span>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='05' class="Anchor">&nbsp;</a>
+                        <p class="Question">
+                            <A href="Word - Project 05.docx">Word - Project 5.docx</A>
+                        </p>
+
+
+
+                        <a name='task33' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            33. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 33</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Đặt khoảng cách dòng là 1.4 dòng cho toàn bộ tài liệu.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task34' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            34. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 34</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Categories", tiếp tục đánh số danh sách từ đầu cột thứ hai, để
+                                            các mục trong danh sách được đánh số từ 1 đến 6.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task35' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            35. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 35</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Chia bốn đoạn trước hình ảnh thành hai cột với khoảng cách cột là "0.4""
+                                            (0.8 cm").
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task36' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            36. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 36</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Đặt tùy chọn đoạn văn sao cho tiêu đề "Founder Information" và văn bản tiếp
+                                            theo luôn nằm trên cùng một trang.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task37' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            37. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 37</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Founder Information", chèn một chú thích mới với tên là
+                                            "Signature1" vào cuối phần sau cụm từ "Signatureby:".
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task38' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            38. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 38</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Founder Information", giải quyết nhận xét.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task39' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            39. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 39</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Ở phần trống ở cuối trang 2, chèn một hình dạng cuộn ngang chứa văn bản
+                                            "Congratulation!". Đặt hình dạng ở giữa dưới trang, wrapping text là Square.
+                                            Kích thước và vị trí cụ thể không có ảnh hưởng.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task40' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            40. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 40</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Kiểm tra tài liệu và xóa tất cả các phần headers, footers và watermarks mà
+                                            bạn tìm thấy. Không xóa thông tin khác.
+                                        </p>
+                                    </span>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='06' class="Anchor">&nbsp;</a>
+                        <p class="Question">
+                            <A href="Word - Project 06.docx">Word - Project 6.docx</A>
+                        </p>
+
+
+
+                        <a name='task41' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            41. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 41</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Áp dụng hiệu ứng nghệ thuật Bút chì (Pencil Sketch) cho hình ảnh logo, đặt ở
+                                            góc phải trên cùng.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task42' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            42. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 42</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Thêm đường viền trang màu có kích thước 3 pt màu đỏ, Accent 1 cho toàn bộ
+                                            tài liệu.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task43' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            43. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 43</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Chỉnh sửa danh sách bằng cách chọn một danh sách tùy chỉnh. Sử dụng font
+                                            Segoe UI Emoji và mã ký tự "25B8" (ký tự đặc biệt RIGHT-POINTING BLACK
+                                            TRIANGLE).
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task44' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            44. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 44</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong thuộc tính tệp, thêm "bikes" làm danh mục.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task45' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            45. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 45</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Sử dụng tính năng trong Word, thay thế tất cả các trường hợp của "community"
+                                            bằng "connectivity".
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task46' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            46. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 46</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Thêm siêu liên kết vào hình ảnh logo, liên kết đến trang
+                                            "https://www.iiigvietnam.com".
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task47' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            47. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 47</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Xóa tất cả định dạng từ cụm từ "awarded to".
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task48' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            48. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 48</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Lưu một bản sao của tài liệu dưới dạng mẫu Word 2019 với tên "Cert", tương
+                                            thích với các tính năng mới nhất của Word và không hỗ trợ macro. Lưu tệp mẫu
+                                            ở vị trí mặc định.
+                                        </p>
+                                    </span>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='07' class="Anchor">&nbsp;</a>
+                        <p class="Question">
+                            <A href="Word - Project 07.doc">Word - Project 7.docx</A>
+                        </p>
+
+
+
+                        <a name='task49' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            49. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 49</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Sửa đổi tài liệu để loại bỏ khỏi Chế độ Tương thích.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task50' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            50. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 50</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong tiêu đề tài liệu, áp dụng hiệu ứng văn bản Fill: Blue, Accent color 1;
+                                            Shadow
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task51' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            51. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 51</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "Author", thay đổi cách bọc văn bản của hình ảnh thành "Square".
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task52' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            52. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 52</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Ở cuối tài liệu, tìm đoạn văn bắt đầu bằng "Internal use refers to items for
+                                            use in a project.". Thêm một đánh dấu vết (bookmark) tên là "Ico" ở đầu đoạn
+                                            văn đó.
+
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task53' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            53. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 53</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Tạo lại mục lục để chỉ hiển thị các tiêu đề level 1.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task54' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            54. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 54</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Sử dụng tính năng trong Word để thay thế tất cả các từ có tên
+                                            là"TinHocSaoViet" bằng "iigvietnam".
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task55' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            55. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 55</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Chuyển đổi tất cả chú thích chân trang thành chú thích cuối trang.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task56' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            56. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 56</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Lưu một bản sao của tài liệu dưới dạng mẫu Word 2019 với tên "Notes", tương
+                                            thích với các tính năng mới nhất của Word và không hỗ trợ macros. Lưu tệp
+                                            mẫu vào vị trí mặc định.
+                                        </p>
+                                    </span>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='08' class="Anchor">&nbsp;</a>
+                        <p class="Question">
+                            <A href="Word - Project 08.docx">Word - Project 8.docx</A>
+                        </p>
+
+
+
+                        <a name='task57' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            57. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 57</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong đoạn văn đầu tiên dưới tiêu đề "Overview", chèn chú thích chân trang
+                                            "Free resource" sau từ "sources".
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task58' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            58. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 58</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Thay đổi lề trang của tài liệu. Đặt lề trên và dưới là "0.75" (1.9cm)" và lề
+                                            trái và phải là "0.5" (1.27 cm)".
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task59' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            59. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 59</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Kiểm tra xem tài liệu có vấn đề về khả năng tiếp cận không. Sửa các vấn đề
+                                            được báo cáo trong kết quả kiểm tra bằng cách thực hiện hành động đề xuất
+                                            đầu tiên.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task60' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            60. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 60</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "MOS Introduce", xóa tất cả định dạng từ đoạn văn bắt đầu bằng
+                                            "MOS is the only justification".
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task61' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            61. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 61</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong bảng đầu tiên, đặt khoảng cách giữa các ô là "0.02 inches (0.05 cm)".
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <a name='task62' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            62. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 62</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trong phần "MOS Version", giải quyết comment.
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task63' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            63. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 63</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Trên trang 1, thay đổi màu đường viền của hình ảnh thành Blue, Accent 1,
+                                            Darker 25%.
+
+                                        </p>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+                        <!-- kết thúc 1 câu-->
+                        <a name='task64' class="Anchor">&nbsp;</a><br />
+                        <span class="CBOffset">
+                            <input type="checkbox" id='181608' onclick='handleClick(this);' />
+                            64. </span>
+                        <div class="Instruction">
+                            <div class="Title"><span>Task 64</span></div>
+                            <div class="Overview">
+                                <div class="OverviewItem"><span>
+                                        <p>
+                                            Chấp nhận tất cả các phần chèn và xóa trong tài liệu, từ chối tất cả các
+                                            thay đổi bố trí.
+                                        </p>
+                                    </span>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br style="clear: both" />
+                        <!-- kết thúc 1 câu-->
+
+
+
+
+
+                        <!-- kết thúc 1 câu-->
+
+                        <br style="clear: both" />
+
+                    </div>
+
+                    <br />
+                    <div class="TestName" style="text-align: center">
+                        End of Instructions</div>
+                    <br />
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </form>
+</body>
+
+<!-- Mirrored from www.gmetrix.net/browsersms4.0//ProjectInstructions46V2.aspx?tstKey=24904&lng=en-US by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Oct 2018 20:01:29 GMT -->
+
+</html>
